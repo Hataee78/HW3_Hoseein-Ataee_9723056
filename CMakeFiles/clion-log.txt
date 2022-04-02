@@ -1,0 +1,4 @@
+Cannot generate into C:\Users\ASUS\Desktop\AP1400-2-HW3-main\AP1400-2-HW3-main
+It is already used for project \usr\src\app
+
+Please either delete it manually or select another generation directory
