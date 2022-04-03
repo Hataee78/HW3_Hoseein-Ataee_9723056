@@ -14,8 +14,7 @@
 //  		delete node;
 //  }
 //  -----------------------------------------------------------
-BST::Node::Node(int value, Node* left, Node* right):value(value),left(left),right(right){
-};
+BST::Node::Node(int value, Node* left, Node* right):value(value),left(left),right(right){};
 // -----------------------------------------------------------------------------------------
 std::ostream &operator<<(std::ostream &os, const BST::Node &node) {
     os << "value: " << node.value << " left: " << node.left << " right: " << node.right;
@@ -248,42 +247,7 @@ BST::Node **BST::find_successor(int value) {
     } 
 }
     
-// ----------------------------------------------------------------------------------------------------------------------
-// bool BST::delete_node(int value) {
-//     if(root == nullptr)
-//         {
-//            return false;
-//         }
-        
-        
-//         Node* node = root;
-//         while(node != nullptr)
-//         {
-//         	// lazy deletion
-//             if(node->value == value)
-//             {
-//                 if(isDeleted == false)
-//                 {
-//                 	   isDeleted = true;
-//                 	   counter--;
-//                    return true;
-//                 }
-//                 else
-//                 {
-//                     return false;
-//                 }
-//            }
-//            else if(node->value < value)
-//            {
-//                 node = node->right;
-//            }
-//            else if(node->value > value)
-//            {
-//                 node = node->left;
-//            }
-//         }
-//         return false;
-//     }
+
 // --------------------------------------------------------------------------------------------------------------------------
 BST::Node* BST::minValueNode(BST::Node* node)
 {
@@ -371,4 +335,20 @@ bool BST::delete_node(int value) {
         
     }
     
+    
 } 
+// ----------------------------------------------------------------------------------------------
+BST::BST (std::initializer_list<int> list):root(nullptr){ 
+    
+    for (auto i = list.begin(); i != list.end(); i++) { 
+                add_node(*i); 
+            } 
+        }
+// ------------------------------------------------------------------------------------------------
+ 
+BST& BST::operator++(){ 
+    return *this; 
+} 
+BST BST::operator ++(int){ 
+    return *this; 
+}

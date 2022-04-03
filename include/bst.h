@@ -3,6 +3,11 @@
 #define BST_H
 #include<functional>
 #include <ostream>
+#include<optional>
+#include <algorithm>
+#include <vector>
+#include <queue>
+#include <list>
 class BST
 {
 public:
@@ -36,6 +41,13 @@ public:
     friend bool operator<=(const BST::Node &rhs, int value);
     friend bool operator>=(const BST::Node &rhs, int value);
     friend bool operator==(const BST::Node &rhs, int value);
+    // BST& operator++(const BST &bst);
+    // // BST operator ++(BST& bst, int);
+    BST& operator++(); 
+    BST operator ++(int);
+    BST (std::initializer_list<int> list);
+     
+
     //----------------------------------------------------------
     friend bool operator<(int value, const BST::Node &rhs);
     friend bool operator>(int value, const BST::Node &rhs);
